@@ -1,0 +1,25 @@
+---
+interface Props {
+	img: string;
+}
+
+const { img } = Astro.props;
+---
+
+<div class="bg-no-repeat bg-cover -mb-32 md:mb-0 relative h-[40vh] md:h-[80vh] w-full md:w-full max-w-full md:max-w-full">
+	<div
+		class="absolute inset-0 md:m-auto w-full h-full flex justify-center flex-col items-center"
+	>
+		<slot />
+	</div>
+	<img
+		class="absolute h-[75%] md:h-full w-full  md:w-full object-fit md:object-cover object-center -z-10"
+		src={img}
+		alt="iSara Banner"
+	/>
+	<!--<img
+		class="absolute md:h-full object-fit md:object-cover object-center -z-40"
+		src={img}
+		alt="iSara Banner"
+	/>-->
+</div>

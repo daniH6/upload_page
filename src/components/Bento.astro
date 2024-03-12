@@ -1,0 +1,68 @@
+---
+import BentoItem from "./BentoItem.astro";
+---
+
+<section
+	class={`
+    w-full max-w-[1400px]
+    grid lg:grid-cols-10 auto-rows-[30rem] gap-4
+    mx-auto p-6 md:p-12 lg:p-20
+  `}
+>
+	<BentoItem class="col-span-10 md:col-span-4" title="Man Set">
+		<div
+			slot="image"
+			class="transition-scale absolute bottom-0 left-0 top-0
+            -z-10 h-50 w-full
+            bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+			style="background-image: url('/Man_Set.webp')"
+		>
+		</div>
+
+		<p slot="content" class="max-w-xl text-base md:text-lg"></p>
+	</BentoItem>
+	<BentoItem class="col-span-10 md:col-span-6" title="Female Set">
+		<div
+			slot="image"
+			class="transition-scale absolute bottom-0 left-0 top-0
+            -z-10 h-50 w-full
+            bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+			style="background-image: url('/Female_Set.webp')"
+		>
+		</div>
+		<p slot="content" class="max-w-xl text-base md:text-lg"></p>
+	</BentoItem>
+	<BentoItem class="col-span-10 md:col-span-6" title="Female Head">
+		<div
+			slot="image"
+			class="transition-scale absolute bottom-0 left-0 top-0
+            -z-10 h-50 w-full
+            bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+			style="background-image: url('')"
+		>
+		</div>
+		<p slot="content" class="max-w-xl text-base md:text-lg"></p>
+	</BentoItem>
+	<BentoItem class="col-span-10 md:col-span-4" title="Male Head">
+		<div
+			slot="image"
+			class="transition-scale absolute bottom-0 left-0 top-0
+            -z-10 h-50 w-full
+            bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+			style="background-image: url('')"
+		>
+		</div>
+		<p slot="content" class="max-w-xl text-base md:text-lg"></p>
+	</BentoItem>
+	<BentoItem class="col-span-10 md:col-span-full" title="Halloween Heads">
+		<div
+			slot="image"
+			class="transition-scale absolute bottom-0 left-0 top-0
+            -z-10 h-50 w-full
+            bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+			style="background-image: url('/Halloween_Heads.webp')"
+		>
+		</div>
+		<p slot="content" class="max-w-xl text-base md:text-lg"></p>
+	</BentoItem>
+</section>

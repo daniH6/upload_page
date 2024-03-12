@@ -1,4 +1,6 @@
 ---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.jsx";
 interface Props {
 	title: string;
 }
@@ -16,36 +18,67 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="text-white">
+		<Navbar client:only="react" />
 		<slot />
+		<Footer />
 	</body>
 </html>
+
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		font-family: "LobsterTwo", system-ui, sans-serif;
+		
+		background: conic-gradient(
+				from 162deg at calc(90px * 0.5) calc(90px * 0.68),
+				rgba(244, 114, 182, 0.7) 36deg,
+				#0000 0
+			),
+			conic-gradient(
+				from 18deg at calc(90px * 0.19) calc(90px * 0.59),
+				rgba(244, 114, 182, 0.7) 36deg,
+				#0000 0
+			),
+			conic-gradient(
+				from 306deg at calc(90px * 0.81) calc(90px * 0.59),
+				rgba(244, 114, 182, 0.7) 36deg,
+				#0000 0
+			),
+			#000000;
+		background-position: 0 calc(90px * 0.35);
+		background-size: calc(90px + 3.6px) calc(90px + 3.6px);
+
+		color: white;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	@font-face {
+		font-family: "LobsterTwo";
+		src: url("/fonts/LobsterTwo-Regular.ttf");
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "LobsterTwo";
+		src: url("/fonts/LobsterTwo-Italic.ttf");
+		font-weight: 400;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "LobsterTwo";
+		src: url("/fonts/LobsterTwo-Bold.ttf");
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "LobsterTwo";
+		src: url("/fonts/LobsterTwo-BoldItalic.ttf");
+		font-weight: 700;
+		font-style: italic;
+		font-display: swap;
 	}
 </style>
