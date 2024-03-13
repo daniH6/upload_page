@@ -10,7 +10,6 @@ if (Astro.request.method === 'POST') {
 		await db.insert((Contact).values({ email, subject, message }));
 	}
 }
-const contact = await db.select().from(Contact)
 
 import Layout from "../layouts/Layout.astro";
 ---
