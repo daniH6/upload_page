@@ -1,16 +1,4 @@
 ---
-import { db, Contact } from 'astro:db'
-
-if (Astro.request.method === 'POST') {
-	const formData = await Astro.request.formData();
-	const email = formData.get('email');
-	const subject = formData.get('subject');
-	const message = formData.get('message');
-	if (typeof email === 'string' && typeof subject === 'string' && typeof message === 'string') {
-		await db.insert((Contact).values({ email, subject, message }));
-	}
-}
-
 import Layout from "../layouts/Layout.astro";
 ---
 
